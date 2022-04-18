@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import SearchForm from '../partials/actions/SearchForm';
@@ -438,6 +438,7 @@ getUsers();
         <>
           <div class="min-h-screen flex justify-center items-center bg-transparent">
             <div class="p-10 border-[1px] -mt-10 border-slate-200 rounded-md flex flex-col bg-white items-center space-y-3">
+			<ArrowBackIosIcon style={{cursor:"pointer"}} onClick={() => setOpen(!open)} />
               <input
                 class="p-3 border-[1px] border-slate-500 rounded-sm w-80"
                 placeholder="Title"

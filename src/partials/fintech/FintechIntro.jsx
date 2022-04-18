@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import UserImage from "../../images/user-64-14.jpg";
 import FintechIcon01 from "../../images/company-icon-01.svg";
 import FintechIcon02 from "../../images/company-icon-02.svg";
@@ -23,6 +23,7 @@ function FintechIntro({ open }) {
   const navigate = useNavigate();
   const storage = getStorage();
   const [name, setName] = useState("");
+  const [openn ,setOpenn] = useState(false)
   const [price, setPrice] = useState("");
   const [cardnumber, setCardnumber] = useState("");
   const [expirydate, setExpirydate] = useState("");
@@ -34,6 +35,7 @@ function FintechIntro({ open }) {
   const handleClose = () => {
     setClose(!close);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -49,7 +51,8 @@ function FintechIntro({ open }) {
       });
     };
     addUsers();
-    navigate("/dashboard/fintech");
+    window.history.back()
+
     setName("");
     setPrice("");
     setCardnumber("");
@@ -103,10 +106,11 @@ function FintechIntro({ open }) {
 
   return (
     <>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} >
         <>
           <div class="min-h-screen flex justify-center items-center bg-transparent">
             <div class="p-10 border-[1px] -mt-10 border-slate-200 rounded-md flex flex-col bg-white items-center space-y-3">
+		<ArrowBackIosIcon style={{cursor:"pointer"}} onClick={() => window.history.back()} />
               <input
                 class="p-3 border-[1px] border-slate-500 rounded-sm w-80"
                 placeholder="Name"

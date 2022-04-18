@@ -3,7 +3,7 @@ import {Modal} from '@material-ui/core'
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import PaginationClassic from '../../components/PaginationClassic';
-
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import User01 from '../../images/user-32-01.jpg';
 import User02 from '../../images/user-32-02.jpg';
 import User07 from '../../images/user-32-07.jpg';
@@ -102,6 +102,7 @@ getUsers();
         <>
           <div class="min-h-screen flex justify-center items-center bg-transparent">
             <div class="p-10 border-[1px] -mt-10 border-slate-200 rounded-md flex flex-col bg-white items-center space-y-3">
+			 <ArrowBackIosIcon style={{cursor:"pointer"}} onClick={() => setOpen(!open)} />
               <input
                 class="p-3 border-[1px] border-slate-500 rounded-sm w-80"
                 placeholder="Title"
